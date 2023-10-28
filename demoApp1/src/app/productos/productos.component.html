@@ -1,0 +1,18 @@
+<table border="1">
+    <tr>
+        <td>Código</td>
+        <td>Descripción</td>
+        <td>Precio</td>
+    </tr>
+    <tr *ngFor = "let prod of datos">
+        <td>{{ prod.codigo}}</td>
+        <td>{{ prod.descripcion}}</td>
+        <td>{{ prod.precio}}</td>
+        <td>
+            <button (click)="seleccionarParaEdicion(prod)">Editar</button>
+            <button (click)="eliminarProducto(prod.codigo)">Eliminar</button>
+        </td>
+    </tr>
+    
+</table>
+

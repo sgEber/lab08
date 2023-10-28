@@ -1,0 +1,31 @@
+<!-- <div style="text-align: center;">
+  <app-selectornumerico [minimo]=1 [maximo]=10 #selector1></app-selectornumerico>
+  <br>
+  <button (click)="selector1.fijar(1)">Fijar en 1</button> <br>
+  <button (click)="selector1.fijar(5)">Fijar en 5</button> <br>
+  <button (click)="selector1.fijar(10)">Fijar en 10</button>
+</div>
+
+<div style="text-align: center;">
+  <app-selectornumerico [minimo]=1 [maximo]=10 #selector2></app-selectornumerico>
+  <br>
+  <button (click)="selector2.fijar(1)">Fijar en 1</button> <br>
+  <button (click)="selector2.fijar(5)">Fijar en 5</button> <br>
+  <button (click)="selector2.fijar(10)">Fijar en 10</button>
+</div> -->
+
+<!-- <app-listadoarticulos [datos]="productos"></app-listadoarticulos> -->
+
+<div>
+  <label>Código: <input [(ngModel)]="nuevoProducto.codigo" type="number"></label>
+  <label>Descripción: <input [(ngModel)]="nuevoProducto.descripcion"></label>
+  <label>Precio: <input [(ngModel)]="nuevoProducto.precio" type="number"></label>
+  <button (click)="agregarProducto(nuevoProducto)">Agregar Producto</button>
+</div>
+<div *ngIf="productoSeleccionado">
+  <label>Código: <input [(ngModel)]="productoSeleccionado.codigo" type="number"></label>
+  <label>Descripción: <input [(ngModel)]="productoSeleccionado.descripcion"></label>
+  <label>Precio: <input [(ngModel)]="productoSeleccionado.precio" type="number"></label>
+  <button (click)="actualizarProducto()">Actualizar Producto</button>
+</div>
+<app-productos [datos]="productos" (productoSeleccionado)="seleccionarProducto($event)" (productoEliminado)="eliminarProducto($event)"></app-productos>
